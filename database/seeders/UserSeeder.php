@@ -14,20 +14,26 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(5)->create();
+        User::factory(20)->create();
         User::create([
             'name' => 'Natika Savitha',
-            'email' => 'natika@gmail.com',
+            'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('1'),
+            'role'=>'admin',
+            'phone' => '628362643783',
+            'bio' => 'flutter dev',
+            'password' => Hash::make('123456'),
         ]);
-        
-       
+
         User::create([
-            'name' => 'Savitha',
-            'email' => 'savitha@gmail.com',
+            'name' => 'Super Admin',
+            'email' => 'superadmin@gmail.com',
             'email_verified_at' => now(),
-            'password' => '12345678',
+            'role'=>'superadmin',
+            'phone' => '6283565743783',
+            'bio' => 'laravel dev',
+            'password' => Hash::make('123456'),
         ]);
+
     }
 }
